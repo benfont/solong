@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/18 13:09:15 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:38:54 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_errors(int argc)
 	}
 	if (ft_strncmp (argv[1], ".ber") == -1)
 	{
-		write(2, "Error\nWrong file name", 21 );
+		write(2, "Error\nWrong file name", 2);
 		exit(-1);
 	}
 	return (0);

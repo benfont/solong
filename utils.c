@@ -6,12 +6,15 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:06:03 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/18 13:30:53 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:51:55 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/*
+ * solo 5 funciones por archivo
+*/
 int	ft_strncmp(char *s1, char *s2, char start, size_t n)
 {
 	size_t	i;
@@ -31,4 +34,9 @@ int	ft_strncmp(char *s1, char *s2, char start, size_t n)
 		cont++;
 	}
 	return ((unsigned char)s1[i] - (unsigned char) s2[count]);
+}
+
+char	*ft_strjoin(char *line, int fd, )
+{
+	
 }
