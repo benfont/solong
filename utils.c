@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/18 13:09:15 by aitlopez         ###   ########.fr       */
+/*   Created: 2023/02/18 13:06:03 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/02/18 13:30:53 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <so_long.h>
+#include "so_long.h"
 
-int	check_errors(int argc)
+int	ft_strncmp(char *s1, char *s2, char start, size_t n)
 {
-	if (argc != 2)
-	{
-		write (2, "Error\nBad arg number", 20);
-		exit(-1);
-	}
-	if (open (argv[1], O_RDONLY) == -1)
-	{
-		write(2, "Error\nNo read file", 18);
-		exit(-1);
-	}
-	if (ft_strncmp (argv[1], ".ber") == -1)
-	{
-		write(2, "Error\nWrong file name", 21 );
-		exit(-1);
-	}
-	return (0);
-}
+	size_t	i;
+	int		count;
 
+	i = 0;
+	count = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] != start)
+		i++;
+	while (s2[cont] != start)
+		cont++;
+	while (s1[i] == s2[cont] && s1[i] && s2[cont] && (i < n - 1))
+	{
+		i++;
+		cont++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char) s2[count]);
+}
