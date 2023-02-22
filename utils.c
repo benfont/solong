@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:06:03 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/21 17:19:29 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:30:33 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,50 @@
 /*
  * solo 5 funciones por archivo
 */
-int	ft_strncmp(char *s1, char *s2, char start, size_t n)
+size_t	ft_strlen(const char *str)
 {
-	size_t	i;
-	int		count;
+	int		c;
 
-	i = 0;
-	count = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] != start)
-		i++;
-	while (s2[cont] != start)
-		cont++;
-	while (s1[i] == s2[cont] && s1[i] && s2[cont] && (i < n - 1))
-	{
-		i++;
-		cont++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char) s2[count]);
+	c = 0;
+	while (str[c] != '\0')
+		c++;
+	return (c);
 }
 
+/*
+ * devuelve la subcadena de la cadena origen
+ * que comienza en la posicion i
+*/
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*str_new;
+	size_t	len_s;
+	size_t	cont;
+
+	len_s = 0;
+	while (s[len_s])
+		len_s++;
+	if (len_s < start)
+		len = 0;
+	else if (len >= (len_s - start))
+		len = len_s - start;
+	str_new = malloc(sizeof(char) * (len + 1));
+	if (!str_new)
+		return (NULL);
+	cont = 0;
+	while (cont < len)
+	{
+		str_new[cont] = s[start];
+		cont++;
+		start++;
+	}
+	str_new[cont] = '\0';
+	return (str_new);
+}
+
+/*
+ * concatenacion de cadenas
+*/
 char	*ft_strjoin(char *line, int fd)
 {
 	int		cont_s1;
@@ -59,4 +82,42 @@ char	*ft_strjoin(char *line, int fd)
 	s3[cont_s1 + cont_s2] = '\0';
 	free(s1);
 	return (s3);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	cont;
+
+	cont = 0;
+	while (s[cont] != '\0')
+	{
+		if (s[cont] == (char)c)
+			return ((char *)(s + cont));
+		cont++;
+	}
+	if (s[cont] == (char)c)
+		return ((char *)(s + cont));
+	return (NULL);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	char	*str_new;
+	int		cont;
+	int		len;
+
+	len = 0;
+	while (s1[len])
+		len++;
+	str_new = malloc(sizeof(char) * (len + 1));
+	if (!str_new)
+		return (NULL);
+	cont = 0;
+	while (s1[cont])
+	{
+		str_new[cont] = s1[cont];
+		cont++;
+	}
+	str_new[cont] = '\0';
+	return (str_new);
 }
