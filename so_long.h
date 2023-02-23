@@ -22,7 +22,7 @@
 /*
  * check_errors functions.c
 */
-int		check_errors(int argc);
+int		check_errors(int argc, char **argv);
 
 /*
  * get_next_line functions.c
@@ -34,6 +34,14 @@ char	*get_next_line(int fd);
 
 /*
  * utils.c
+*/
+size_t		ft_strlen(const char *str);
+char		*ft_substr(const char *s, unsigned int start, size_t len);
+char		*ft_strjoin(char *line, int fd);
+char		*ft_strchr(const char *s, int c);
+char		*ft_strdup(const char *s1);
+/*
+* utils1.c
 */
 int		ft_strncmp(char *s1, char *s2, char start, size_t n);
 

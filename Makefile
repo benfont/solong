@@ -13,7 +13,7 @@
 NAME = so_long.a
 
 CC = gcc
-SRC = check_errors.c get_next_line.c utils.c
+SRC = check_errors.c get_next_line.c utils.c utils1.c
 
 FLAGS = -Wall -Werror -Wextra
 OBJ = $(SRC:.c=.o)
@@ -21,21 +21,24 @@ HEADER = so_long.h
 
 RM = rm -f
 
-%.o : %.c $(HEADER)
-	$(CC) $(FLAGS) - c $< -o $@
+%.o : %.c
+	make -C
+	$(CC) $(FLAGS) -I$< -o $@
 
 $(NAME) : $(OBJ) $(HEADER)
-	ar rcs $(NAME) $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 all : $(NAME)
 
 clean :
 	$(RM) $(OBJ)
 
-fclear : clean
+fclean : clean
 	$(RM) $(NAME)
 	@echo "$(NAME) cleaned!$(NC)"
 
 re : fclean all
+norm:
+	@norminette
 
-.PHONY = all clean fclean re
+.PHONY = all clean fclean re norm

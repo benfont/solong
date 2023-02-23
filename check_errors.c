@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <so_long.h>
+#include "so_long.h"
 
 int	check_errors(int argc, char **argv)
 {
