@@ -6,13 +6,13 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/21 20:18:39 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:11:13 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <so_long.h>
+#include "so_long.h"
 
-int	ft_read_map(char **argv, t_game game)
+int	ft_read_map(char **argv, t_game *map_raw)
 {
 	int		fd;
 	char	*line;
@@ -28,14 +28,16 @@ int	ft_read_map(char **argv, t_game game)
 	line = get_next_line(fd);
 	if (!line)
 		return (-1);
-	map_raw = ft_strdup(line);
+	t_game->map_raw = ft_strdup(line);
 	while (line)
 	{
 		line = get_next_line(fd);
-		map_raw = ft_strjoin(map_raw, line); 
+		if(!line)
+			break;
+		t_game->map_raw = ft_strjoin(t_game->map_raw, line); 
 	}
 	free(line);
-	return (f);
+	return (fd);
 }
 
 int	main(int argc, char **argv)

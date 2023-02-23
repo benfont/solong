@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/18 14:34:42 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:49:09 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ size_t		ft_strlen(const char *str);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strjoin(char *line, int fd);
 char		*ft_strchr(const char *s, int c);
-char		*ft_strdup(const char *s1);
+char		*ft_strdup(char *s1);
 /*
 * utils1.c
 */
