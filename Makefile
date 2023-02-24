@@ -6,14 +6,14 @@
 #    By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 10:52:06 by aitlopez          #+#    #+#              #
-#    Updated: 2023/02/22 10:58:10 by aitlopez         ###   ########.fr        #
+#    Updated: 2023/02/24 21:14:01 by aitlopez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long.a
 
 CC = gcc
-SRC = check_errors.c get_next_line.c utils.c utils1.c
+SRC = check_errors.c get_next_line.c utils.c utils1.c ft_split.c
 
 FLAGS = -Wall -Werror -Wextra
 OBJ = $(SRC:.c=.o)

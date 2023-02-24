@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/23 15:49:09 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/24 21:13:35 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char		*ft_strdup(char *s1);
 */
 int		ft_strncmp(char *s1, char *s2, char start, size_t n);
 
+char	**ft_split(char const *s, char c);
+
 /* definicion de una estructura
  * estructura -> colecciones de variables
  * pueden contener diferentes tipos de datos
@@ -56,3 +58,5 @@ typedef struct s_game
 	int		width;
 	int		height;
 } t_game;
+
+#endif
