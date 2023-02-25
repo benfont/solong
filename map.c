@@ -6,13 +6,13 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 20:21:55 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/24 21:41:25 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:10:18 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_read_map(char **argv, t_game *game)
+void	ft_read_map(char **argv, t_game *game)
 {
 	int		fd;
 	char	*line;
@@ -35,19 +35,42 @@ int	ft_read_map(char **argv, t_game *game)
 		line = get_next_line(fd);
 		if(!line)
 			break;
-		game->map_raw = ft_strjoin(game->map_raw, fd);
+		game->map_raw = ft_strjoin(game->map_raw, line);
 	}
 	free(line);
-	return (fd);
+	close (fd);
 }
 
-size_t	ft_width(const char *fd, t_game *game)
+void	ft_create_map(t_game *game)
 {
-	int		c;
+	game->map = ft_split(game->map_raw, '\n');
+}
 
-	c = 0;
-	while (fd[c] != '\0')
-		c++;
-	game->width = ft_strlen(game->width, c);
-	return (c);
+void	ft_width(t_game *game)
+{
+	int		count1;
+
+	count1 = 0;
+	while (game->map_raw[count1] != '\n' && game->map_raw[count1] != '\0')
+		count1++;
+	game->width = count1;
+}
+
+void	ft_height(t_game *game)
+{
+	int		count1;
+	int		count2;
+	
+	count1 = 0;
+	count2 = 0;
+	while (game->map[count2] != NULL)
+	{
+		while (game->map[count2][count1] != '\n' && game->map[count2][count1] != '\0')
+		{
+			count1++;
+		}
+		count1 = 0;
+		count2++;
+	}
+	game->height = count2;
 }

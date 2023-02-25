@@ -6,12 +6,11 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:06:03 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/23 15:49:48 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:28:55 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 /*
  * solo 5 funciones por archivo
 */
@@ -59,7 +58,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 /*
  * concatenacion de cadenas
 */
-char	*ft_strjoin(char *line, int fd)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		cont_s1;
 	int		cont_s2;
@@ -74,7 +73,9 @@ char	*ft_strjoin(char *line, int fd)
 	}
 	s3 = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s3)
-		return (NULL);
+		return (true_free(&s1));
+	cont_s1 = -1;
+	cont_s2 = -1;
 	while (s1[++cont_s1])
 		s3[cont_s1] = s1[cont_s1];
 	while (s2[++cont_s2])
