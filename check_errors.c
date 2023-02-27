@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/25 21:53:32 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:43:39 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,18 @@ int	check_errors(int argc, char **argv)
 	return (0);
 }
 
+int	check_barrier(t_game *game)
+{
+	int		count;
+
+	count = 0;
+	while (count < game->width)
+	{
+		if (game->map[0][count] != '1')
+			return (-1);
+		if (game->map[game->height -1][count] != '1')
+			return (-1);
+		count++;
+	}
+	return (0);
+}

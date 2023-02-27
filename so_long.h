@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/25 21:53:02 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/27 20:06:52 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,18 +58,8 @@ char			*ft_strdup(char *s1);
 //utils1.c
 int				ft_strncmp(char *s1, char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
-
-//definicion de una estructura
-//estructura -> colecciones de variables
-//pueden contener diferentes tipos de datos
-/*
-typedef struct s_game
-{
-	char	**map;
-	char	*map_raw;
-	int		width;
-	int		height;
-} t_game;
-*/
+//check_barrier
+int				ft_barrier_height(t_game *game);
+int				ft_barrier_width(t_game *game);
 
 #endif
