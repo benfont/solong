@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/27 20:06:52 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:57:45 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_game
 
 //check_errors functions.c
 int				check_errors(int argc, char **argv);
+int				check_rectangular_map(t_game *game);
+int				content_map(t_game *game);
 //ft_split
 //static int		word_counter(char const *s, char c);
 //static void		memfree(char **str, size_t j);

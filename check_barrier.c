@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 19:58:07 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/27 20:10:49 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/28 20:57:55 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,37 @@ int	ft_barrier_height(t_game *game)
 	int		count2;
 
 	count1 = 0;
-	count2 = 0;
+	printf("Este es el height %d\n", game->height);
 	while (count1 < game->width)
 	{
-		if (game->map[count1][0] != '1')
-			return (1);
+		if (game->map[0][count1] != '1')
+		{
+			return (-1);
+		}
+		printf("Estoy en 1\n");
 		count1++;
 	}
-	printf("Este es el width %d\n", game->width);
+	printf("Este es el contador cuando sale: %d\n", count1);
 	if (count1 != game->width)
-		return (1);
-	while (count1 < game->width)
 	{
-		if (game->map[count2][game->height - 1] != '1')
-			return (1);
-		count2++;
+		printf("Me meto aqui\n");
+		return (-1);
 	}
-	if (count2 != game->width)
-		return (1);
+	count2 = 0;
+	printf("Este es el width %d\n", game->width);
+	while (count2 < game->width)
+	{
+		printf("Al menos entro una vez?\n");
+		if (game->map[game->height -1][count2] != '1')
+		{
+		printf("Este es el Caracter que encuentra: %c\n", game->map[game->width -1][count2]);
+			return (-1);
+		}
+		count2++;
+		printf("Estoy en 2\n");
+	}
+	if (count2 != game->height)
+		return (-1);
 	return (0);
 }
 
@@ -45,22 +58,32 @@ int	ft_barrier_width(t_game *game)
 	int		count2;
 
 	count1 = 0;
-	count2 = 0;
-	while (count1 < game->width)
+	printf("este es el height %d\n", game->height);
+	while (count1 < game->height)
 	{
 		if (game->map[count1][0] != '1')
-			return (1);
+			return (-1);
+		printf("estoy en 1\n");
 		count1++;
 	}
 	if (count1 != game->width)
-		return (1);
+	{
+		printf("me meto aqui\n");
+		return (-1);
+	}
+	count2 = 0;
+	printf("Este es el height %d\n", game->height);
+	printf("hola\n");
 	while (count2 < game->width)
 	{
-		if (game->map[count2][game->height - 1] != '1')
-			count2++;
-		return (1);
+		if (game->map[game->width - 1][count2] != '1')
+			return (-1);
+		count2++;
 	}
 	if (count2 != game->width)
-		return (1);
+	{
+		printf("me meto aqui\n");
+		return (-1);
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/27 17:43:39 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:40:34 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,47 @@ int	check_errors(int argc, char **argv)
 		write (2, "Error\nIncorrect extension", 25);
 		exit(-1);	
 	}
+	
 	return (0);
 }
 
-int	check_barrier(t_game *game)
+int	check_rectangular_map(t_game *game)
 {
-	int		count;
+	int		width;
+	int		height;
 
-	count = 0;
-	while (count < game->width)
+	width = 0;
+	height = 0;
+	if (height >= game->width)
 	{
-		if (game->map[0][count] != '1')
-			return (-1);
-		if (game->map[game->height -1][count] != '1')
-			return (-1);
-		count++;
+		write(2, "Error\nNo rectangular map", 24);
+		exit(-1);
+	}
+	return (0);
+}
+
+int	content_map(t_game *game)
+{
+	int		count1;
+	int		count2;
+
+	count1 = 0;
+	count2 = 0;
+	while (count2 < game->height)
+	{
+		count1 = 0;
+		while (count1 < game->width)
+		{
+			if (game->map[count1][count2] != '1' && game->map[count1][count2]
+					&& game->map[count1][count2] != 'C'
+					&& game->map[count1][count2] != 'E'
+					&& game->map[count1][count2] != 'P'
+					&& game->map[count1][count2] != '\0'
+					&& game->map[count1][count2] != '\n')
+				return (1);
+			count1++;
+		}
+		count2++;
 	}
 	return (0);
 }
