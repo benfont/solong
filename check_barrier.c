@@ -12,13 +12,13 @@
 
 #include "so_long.h"
 
-int	ft_barrier_height(t_game *game)
+int	ft_barrier_width(t_game *game)
 {
 	int		count1;
 	int		count2;
 
 	count1 = 0;
-	printf("Este es el height %d\n", game->height);
+	printf("Este es el width %d\n", game->width);
 	while (count1 < game->width)
 	{
 		if (game->map[0][count1] != '1')
@@ -28,20 +28,20 @@ int	ft_barrier_height(t_game *game)
 		printf("Estoy en 1\n");
 		count1++;
 	}
-	printf("Este es el contador cuando sale: %d\n", count1);
+//	printf("Este es el contador cuando sale: %d\n", count1);
 	if (count1 != game->width)
 	{
-		printf("Me meto aqui\n");
+//		printf("Me meto aqui\n");
 		return (-1);
 	}
 	count2 = 0;
-	printf("Este es el width %d\n", game->width);
+//	printf("Este es el width %d\n", game->width);
 	while (count2 < game->width)
 	{
-		printf("Al menos entro una vez?\n");
+//		printf("Al menos entro una vez?\n");
 		if (game->map[game->height -1][count2] != '1')
 		{
-		printf("Este es el Caracter que encuentra: %c\n", game->map[game->width -1][count2]);
+//		printf("Este es el Caracter que encuentra: %c\n", game->map[game->width -1][count2]);
 			return (-1);
 		}
 		count2++;
@@ -52,7 +52,7 @@ int	ft_barrier_height(t_game *game)
 	return (0);
 }
 
-int	ft_barrier_width(t_game *game)
+int	ft_barrier_height(t_game *game)
 {
 	int		count1;
 	int		count2;
@@ -66,19 +66,21 @@ int	ft_barrier_width(t_game *game)
 		printf("estoy en 1\n");
 		count1++;
 	}
-	if (count1 != game->width)
+	if (count1 != game->height)
 	{
-		printf("me meto aqui\n");
+//		printf("me meto aquihey\n");
 		return (-1);
 	}
 	count2 = 0;
-	printf("Este es el height %d\n", game->height);
-	printf("hola\n");
-	while (count2 < game->width)
+	while (count2 < game->height)
 	{
-		if (game->map[game->width - 1][count2] != '1')
+		if (game->map[count2][game->width -1] != '1')
+		{
+			printf("hey2\n");
 			return (-1);
+		}
 		count2++;
+		printf("estoy en dos\n");
 	}
 	if (count2 != game->width)
 	{

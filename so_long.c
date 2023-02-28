@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	ft_create_map(&game);
 	ft_width(&game);
 	ft_height(&game);
-//	ft_barrier_height(&game);
+	ft_barrier_height(&game);
 	ft_barrier_width(&game);
 //	check_rectangular_map(&game);
 	printf("my ancho is %d\n", game.width);
