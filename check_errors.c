@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/28 19:40:34 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:22:40 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,6 @@ int	check_errors(int argc, char **argv)
 		exit(-1);	
 	}
 	
-	return (0);
-}
-
-int	check_rectangular_map(t_game *game)
-{
-	int		width;
-	int		height;
-
-	width = 0;
-	height = 0;
-	if (height >= game->width)
-	{
-		write(2, "Error\nNo rectangular map", 24);
-		exit(-1);
-	}
 	return (0);
 }
 

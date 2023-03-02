@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/28 18:57:45 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:22:09 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
 //check_barrier
 int				ft_barrier_height(t_game *game);
 int				ft_barrier_width(t_game *game);
+//check_rectangle
+int				check_rectangle(t_game *game);
 
 #endif
