@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 19:58:07 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/28 20:57:55 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:37:34 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_barrier_width(t_game *game)
 		{
 			return (-1);
 		}
-		printf("Estoy en 1\n");
+//		printf("Estoy en 1\n");
 		count1++;
 	}
 //	printf("Este es el contador cuando sale: %d\n", count1);
@@ -63,7 +63,7 @@ int	ft_barrier_height(t_game *game)
 	{
 		if (game->map[count1][0] != '1')
 			return (-1);
-		printf("estoy en 1\n");
+//		printf("estoy en 1\n");
 		count1++;
 	}
 	if (count1 != game->height)

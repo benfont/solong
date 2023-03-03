@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/02 18:22:40 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/03 21:06:38 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,31 +30,5 @@ int	check_errors(int argc, char **argv)
 		exit(-1);	
 	}
 	
-	return (0);
-}
-
-int	content_map(t_game *game)
-{
-	int		count1;
-	int		count2;
-
-	count1 = 0;
-	count2 = 0;
-	while (count2 < game->height)
-	{
-		count1 = 0;
-		while (count1 < game->width)
-		{
-			if (game->map[count1][count2] != '1' && game->map[count1][count2]
-					&& game->map[count1][count2] != 'C'
-					&& game->map[count1][count2] != 'E'
-					&& game->map[count1][count2] != 'P'
-					&& game->map[count1][count2] != '\0'
-					&& game->map[count1][count2] != '\n')
-				return (1);
-			count1++;
-		}
-		count2++;
-	}
 	return (0);
 }

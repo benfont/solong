@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_rectangle.c                                  :+:      :+:    :+:   */
+/*   check_characters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 18:02:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/03 20:22:47 by aitlopez         ###   ########.fr       */
+/*   Created: 2023/03/03 20:25:44 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/03/03 21:06:10 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_rectangle(t_game *game)
+int	check_characters(t_game *game)
 {
 	int		col;
 	int		fil;
 
 	col = 0;
 	fil = 0;
-	printf("Entramos en la funcion checkrectangle\n");
+	printf("Entramos en la funcion check characters\n");
 	while (game->map[col][fil])
 	{
-		printf("Entramos en el while de col < width\n");
-		printf("El col vale: %d, y el fil vale: %d\n", col, fil);
 		while (game->map[fil])
 		{
 			fil++;
-			printf("Entramos en el while del fil\n");
-			printf("El col vale: %d, y el fil vale: %d\n", col, fil);
-		}
-		if (fil != game->width)
-		{
-			write (2, "Error\nIt's not a rectangle\n", 28);
-			return (-1);
+			if(game->map[col][fil] != '1' && game->map[col][fil]
+					&& game->map[col][fil] != '0'
+					&& game->map[col][fil] != 'C'
+					&& game->map[col][fil] != 'E'
+					&& game->map[col][fil] != 'P'
+					&& game->map[col][fil] != '\0'
+					&& game->map[col][fil] != '\n')
+			{
+				printf("hey\n");
+				write (2, "Error\nWrong characters\n", 23);
+				return (-1);
+			}
 		}
 		col++;
 		fil = 0;
