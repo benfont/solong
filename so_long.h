@@ -6,29 +6,44 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/03 20:45:28 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/04 20:40:28 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# define SIZE 32
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
 # include <limits.h>
+# include "mlx/mlx.h"
 
 //definicion de una estructura
 //estructura -> colecciones de variables
 //pueden contener diferentes tipos de datos
 
+typedef struct s_img
+{
+	void	*img_ptr;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+}	t_img;
+
 typedef struct s_game
 {
+	void	*mlx_ptr;
+	void	*win_ptr;
 	char	**map;
 	char	*map_raw;
 	int		width;
 	int		height;
+	t_img	*imgs;
 } t_game;
 
 //check_errors functions.c
@@ -67,5 +82,11 @@ int				ft_barrier_width(t_game *game);
 int				check_rectangle(t_game *game);
 //check_characters
 int				check_characters(t_game *game);
+//upload_images
+void			ft_upload_images(t_game *game);
+//print_map
+void			ft_print_map(t_game *game);
+//ft_print_characters
+void			ft_print_barrier(t_game *game, int c1, int c2);
 
 #endif
