@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/04 20:40:28 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:00:30 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,9 @@ int				check_characters(t_game *game);
 //upload_images
 void			ft_upload_images(t_game *game);
 //print_map
-void			ft_print_map(t_game *game);
+void			print_map(t_game *game);
 //ft_print_characters
-void			ft_print_barrier(t_game *game, int c1, int c2);
+void			ft_print_barrier(t_game *game, int col, int fil);
+void			ft_print_espacio(t_game *game, int col, int fil);
 
 #endif

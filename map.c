@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 20:21:55 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/04 20:37:47 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/06 18:52:13 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,29 +48,29 @@ void	ft_create_map(t_game *game)
 
 void	ft_width(t_game *game)
 {
-	int		count1;
+	int		fil;
 
-	count1 = 0;
-	while (game->map_raw[count1] != '\n' && game->map_raw[count1] != '\0')
-		count1++;
-	game->width = count1;
+	fil = 0;
+	while (game->map_raw[fil] != '\n' && game->map_raw[fil] != '\0')
+		fil++;
+	game->width = fil;
 }
 
 void	ft_height(t_game *game)
 {
-	int		count1;
-	int		count2;
+	int		fil;
+	int		col;
 	
-	count1 = 0;
-	count2 = 0;
-	while (game->map[count2] != NULL)
+	fil = 0;
+	col = 0;
+	while (game->map[col] != NULL)
 	{
-		while (game->map[count2][count1] != '\n' && game->map[count2][count1] != '\0')
+		while (game->map[col][fil] != '\n' && game->map[col][fil] != '\0')
 		{
-			count1++;
+			fil++;
 		}
-		count1 = 0;
-		count2++;
+		fil = 0;
+		col++;
 	}
-	game->height = count2;
+	game->height = col;
 }
