@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 20:28:19 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:13:00 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_game
 	char	*map_raw;
 	int		width;
 	int		height;
+	int		keycode;
 	t_img	*imgs;
 } t_game;
 
@@ -91,5 +92,8 @@ void			ft_print_barrier(t_game *game, int col, int fil);
 void			ft_print_espacio(t_game *game, int col, int fil);
 void			ft_print_coleccionable(t_game *game, int col, int fil);
 void			ft_print_exit(t_game *game, int col, int fil);
+//ft_movements
+static char		ft_get_direction(int keycode);
+int				ft_movements(int keycode);
 
 #endif

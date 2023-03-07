@@ -6,12 +6,19 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 19:05:03 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:23:18 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "so_long.h"
+
+int	ft_free_exit(t_game *game)
+{
+	(void)game;
+	exit(1);
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -29,11 +36,14 @@ int	main(int argc, char **argv)
 //	check_characters(&game);
 	printf("my ancho is %d\n", game.width);
 	printf("my largo is %d\n", game.height);
+	ft_get_direction(int keycode);
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,
 			game.height * SIZE, "El plan");
 	ft_upload_images(&game);
 	print_map(&game);
+	mlx_hook(game.win_ptr, 17, 0, ft_free_exit, &game);
+	mlx_hook(game.win_ptr, 2, 0, ft_movements, &game);
 	mlx_loop(game.mlx_ptr);
 	return (0);
 }
