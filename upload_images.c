@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:35:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 20:01:19 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:06:55 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void	ft_upload_images(t_game *game)
 			"images/coleccionable.xpm", &width, &height);
 	game->imgs[2].data = (int *)mlx_get_data_addr(game->imgs[2].img_ptr,
 			&game->imgs[2].bpp, &game->imgs[2].size_l, &game->imgs[2].endian);
+	game->imgs[3].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
+			"images/heroe_w.xpm", &width, &height);
+	game->imgs[3].data = (int *)mlx_get_data_addr(game->imgs[0].img_ptr,
+			&game->imgs[3].bpp, &game->imgs[3].size_l, &game->imgs[3].endian);
 	game->imgs[4].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
 			"images/exit.xpm", &width, &height);
 	game->imgs[4].data = (int *)mlx_get_data_addr(game->imgs[4].img_ptr,

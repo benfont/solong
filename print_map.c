@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:59:41 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 20:32:01 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:08:25 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	print_map(t_game *game)
 			else if (game->map[col][fil] == 'C')
 				ft_print_coleccionable(game, col, fil);
 			else if (game->map[col][fil] == 'E')
+				ft_print_exit(game, col, fil);
+			else if (game->map[col][fil] == 'P')
 				ft_print_exit(game, col, fil);
 			fil++;
 		}
