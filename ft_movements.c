@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_movements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 20:43:20 by aitlopez         ###   ########.fr       */
+/*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/03/08 20:46:41 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "so_long.h"
-/*
+#include <stdio.h>
+
 static char	ft_get_direction(int keycode)
 {
 	if (keycode == 13)
@@ -34,19 +34,19 @@ static void	ft_movement_w_s(t_game *game)
 	{
 		game->map[game->player_x][game->player_y] = '0';
 		game->player_x = game->player_x + 1;
-		game->map[game->player_x][game->player_y] = 'P';
+		game->map[game->player_x][game->player_y] = 'W';
 		game->position = 'W';
 	}
 	else if (game->position == 'S')
 	{
 		game->map[game->player_x][game->player_y] = '0';
 		game->player_x = game->player_x - 1;
-		game->map[game->player_x][game->player_y] = 'P';
+		game->map[game->player_x][game->player_y] = 'S';
 		game->position = 'S';
 	}
 }
 
-static void	ft_movement_a_d(t_game *game)
+static void ft_movement_a_d(t_game *game)
 {
 	if (game->position == 'A')
 	{
@@ -57,9 +57,9 @@ static void	ft_movement_a_d(t_game *game)
 	}
 	else if (game->position == 'D')
 	{
-		game->map[player_x][player_y] == '0';
+		game->map[game->player_x][game->player_y] = '0';
 		game->player_y = game->player_y + 1;
-		game->map[player_x][player_y] == 'D';
+		game->map[game->player_x][game->player_y] = 'D';
 		game->position = 'D';
 	}
 }
@@ -68,46 +68,19 @@ int	ft_movements(int keycode, t_game *game)
 {
 	game->position = ft_get_direction(keycode);
 	if (keycode == 'W')
-		printf("Me muevo arriba\n");
-	if (keycode == 'A')
-		printf("Me muevo a la izquierda\n");
+		printf("Me muevo hacia arriba\n");
 	if (keycode == 'S')
 		printf("Me muevo hacia abajo\n");
+	if (keycode == 'A')
+		printf("Me muevo hacia la izquierda\n");
 	if (keycode == 'D')
-		printf("Me muevo a la derecha\n");
+		printf("Me muevo hacia la derecha\n");
 	return (0);
 }
-*/
+
 int	ft_free_exit(t_game *game)
 {
 	(void)game;
 	exit(1);
-	return (0);
-}
-
-int	main(int argc, char **argv)
-{
-
-	t_game  game;
-
-	check_errors(argc, argv);
-	ft_read_map(argv, &game);
-	ft_create_map(&game);
-	ft_width(&game);
-	ft_height(&game);
-//	ft_barrier_height(&game);
-//	ft_barrier_width(&game);
-//	check_rectangle(&game);
-//	check_characters(&game);
-	printf("my ancho is %d\n", game.width);
-	printf("my largo is %d\n", game.height);
-	game.mlx_ptr = mlx_init();
-	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,
-			game.height * SIZE, "El plan");
-	ft_upload_images(&game);
-	print_map(&game);
-	mlx_hook(game.win_ptr, 17, 0, ft_free_exit, &game);
-	mlx_hook(game.win_ptr, 2, 0, ft_movements, &game);
-	mlx_loop(game.mlx_ptr);
 	return (0);
 }

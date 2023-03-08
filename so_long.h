@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 20:15:41 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:45:12 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,7 @@ void			ft_print_barrier(t_game *game, int col, int fil);
 void			ft_print_espacio(t_game *game, int col, int fil);
 void			ft_print_coleccionable(t_game *game, int col, int fil);
 void			ft_print_exit(t_game *game, int col, int fil);
+//ft_movements
+int				ft_movements(int keycode, t_game *game);
 
 #endif
