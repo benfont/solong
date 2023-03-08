@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 18:55:53 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:13:51 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,43 @@ static char	ft_get_direction(int keycode)
 		return (-1);
 	return (0);
 }
-/*
+
 static void	ft_movement_w_s(t_game *game)
 {
 	if (game->position == 'W')
 	{
-		game->map[player_x][player_y] = '0';
+		game->map[game->player_x][game->player_y] = '0';
 		game->player_x = game->player_x + 1;
-		game->map[player_x][player_y] = 'P';
-		game->pos_player = 'W';
+		game->map[game->player_x][game->player_y] = 'P';
+		game->position = 'W';
 	}
 	else if (game->position == 'S')
 	{
-		
+		game->map[game->player_x][game->player_y] = '0';
+		game->player_x = game->player_x - 1;
+		game->map[game->player_x][game->player_y] = 'P';
+		game->position = 'S';
 	}
 }
-*/
+
+static void	ft_movement_a_d(t_game *game)
+{
+	if (game->position == 'A')
+	{
+		game->map[game->player_x][game->player_y] = '0';
+		game->player_y = game->player_y - 1;
+		game->map[game->player_x][game->player_y] = 'A';
+		game->position = 'A';
+	}
+	else if (game->position == 'D')
+	{
+		game->map[player_x][player_y] == '0';
+		game->player_y = game->player_y + 1;
+		game->map[player_x][player_y] == 'D';
+		game->position = 'D';
+	}
+}
+
 int	ft_movements(int keycode, t_game *game)
 {
 	game->position = ft_get_direction(keycode);

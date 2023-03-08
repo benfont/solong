@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 20:10:49 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/07 17:16:41 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:40:09 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ void	ft_print_coleccionable(t_game *game, int col, int fil)
 {
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
 			game->imgs[2].img_ptr, (fil * SIZE), (col * SIZE));
+}
+
+void	ft_print_heroe_w(t_game *game, int col, int fil)
+{
+	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr,
+			game->imgs[3].img_ptr, (fil * SIZE), (col * SIZE));
 }
 
 void	ft_print_exit(t_game *game, int col, int fil)

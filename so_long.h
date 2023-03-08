@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 18:57:41 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:15:41 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct s_game
 	t_img	*imgs;
 	int		keycode;
 	int		position;
+	int		player_x;
+	int		player_y;
 } t_game;
 
 //check_errors functions.c
