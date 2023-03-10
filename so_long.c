@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 20:41:26 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/10 21:14:58 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	main(int argc, char **argv)
 	check_characters(&game);
 	printf("my ancho is %d\n", game.width);
 	printf("my largo is %d\n", game.height);
-//	check_player(&game);
+	check_items(&game);
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,
 			game.height * SIZE, "El plan");
