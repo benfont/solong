@@ -6,13 +6,13 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 20:46:41 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:34:01 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
-
+//este archivo mueve el player en el map
 static char	ft_get_direction(int keycode)
 {
 	if (keycode == 13)
@@ -33,14 +33,14 @@ static void	ft_movement_w_s(t_game *game)
 	if (game->position == 'W')
 	{
 		game->map[game->player_x][game->player_y] = '0';
-		game->player_x = game->player_x + 1;
+		game->player_x = game->player_x - 1;
 		game->map[game->player_x][game->player_y] = 'W';
 		game->position = 'W';
 	}
 	else if (game->position == 'S')
 	{
 		game->map[game->player_x][game->player_y] = '0';
-		game->player_x = game->player_x - 1;
+		game->player_x = game->player_x + 1;
 		game->map[game->player_x][game->player_y] = 'S';
 		game->position = 'S';
 	}
@@ -75,12 +75,16 @@ int	ft_movements(int keycode, t_game *game)
 		printf("Me muevo hacia la izquierda\n");
 	if (keycode == 'D')
 		printf("Me muevo hacia la derecha\n");
+	ft_movement_w_s(game);
+	ft_movement_a_d(game);
+	print_map(game);
 	return (0);
 }
-
+/*
 int	ft_free_exit(t_game *game)
 {
 	(void)game;
 	exit(1);
 	return (0);
 }
+*/

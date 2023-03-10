@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 20:25:44 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 20:15:06 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:38:12 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	check_characters(t_game *game)
 			{
 				printf("hey\n");
 				write (2, "Error\nWrong characters\n", 23);
-				return (-1);
+				exit(-1);
+//				return (-1);
 			}
 		}
 		col++;
