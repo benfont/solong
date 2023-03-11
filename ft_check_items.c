@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:47:00 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 21:38:09 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:40:47 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,16 @@ void	check_items(t_game *game)
 			if (game->map[col][fil] == 'E')
 				game->exit++;
 			if (game->map[col][fil] == 'C')
-				game->coleccionable++;
+			{
+				game->collect++;
+				printf("Tenemos estos coleccionables: %d\n", game->collect);
+			}
 			fil++;
 		}
 		col++;
 		fil = 0;
 	}
-	if (game->player != 1 || game->exit != 1 || game->coleccionable < 1)
+	if (game->player != 1 || game->exit != 1 || game->collect < 1)
 	{
 		write (2, "Error\nError\n", 12);
 		exit(-1);

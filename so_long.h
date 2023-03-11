@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 21:33:19 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:28:08 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_game
 	t_img	*imgs;
 	int		keycode;
 	int		player;
-	int		coleccionable;
+	int		collect;
 	int		exit;
 	int		position;
 	int		player_x;
@@ -104,5 +104,7 @@ int				ft_movements(int keycode, t_game *game);
 //ft_check_items
 void			check_items(t_game *game);
 void			get_pos_player(t_game *game);
+int		ft_can_exit(t_game *game);
+
 
 #endif

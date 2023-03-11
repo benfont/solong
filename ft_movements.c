@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 22:19:01 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:59:14 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,48 @@ int ft_can_move(t_game *game)
 {
 	if (game->position == 'W' && (game->map[game->player_x -1][game->player_y] == '0' || (game->map[game->player_x -1][game->player_y] == 'C')))
 	{
-//		if (game->map[game->player_x +1][game->player_y] == 'C')
-//			game->collect--;
+		if (game->map[game->player_x -1][game->player_y] == 'C')
+			game->collect--;
+//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
 	}
 	if (game->position == 'S' && (game->map[game->player_x +1][game->player_y] == '0' || (game->map[game->player_x +1][game->player_y] == 'C')))
+	{
+		if (game->map[game->player_x +1][game->player_y] == 'C')
+			game->collect--;
+//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
+	}
 	if (game->position == 'A' && (game->map[game->player_x][game->player_y -1] == '0' || (game->map[game->player_x][game->player_y -1] == 'C')))
+	{
+		if (game->map[game->player_x][game->player_y -1] == 'C')
+			game->collect--;
+//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
+	}
 	if (game->position == 'D' && (game->map[game->player_x][game->player_y +1] == '0' || (game->map[game->player_x][game->player_y +1] == 'C')))
+	{
+		if (game->map[game->player_x][game->player_y +1] == 'C')
+			game->collect--;
+//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
+	}
+	if (game->collect == 0)
+		ft_can_exit(game);
+	return (0);
+}
+
+int	ft_can_exit(t_game *game)
+{
+//	printf("Aqui entro\n");
+	if (game->position == 'W' && (game->map[game->player_x -1][game->player_y] == 'E'))
+		exit(-1);
+	if (game->position =='S' && (game->map[game->player_x +1][game->player_y] == 'E'))
+   		exit(-1);
+	if (game->position == 'A' && (game->map[game->player_x][game->player_y -1] == 'E'))
+		exit(-1);
+	if (game->position == 'D' && (game->map[game->player_x][game->player_y +1] == 'E'))
+		exit(-1);
 	return (0);
 }
 
