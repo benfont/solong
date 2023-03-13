@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 20:28:08 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:56:24 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_game
 	int		position;
 	int		player_x;
 	int		player_y;
+	int		contador;
 } t_game;
 
 //check_errors functions.c
@@ -101,10 +102,15 @@ void			ft_print_exit(t_game *game, int col, int fil);
 void			ft_print_heroe_w(t_game *game, int col, int fil);
 //ft_movements
 int				ft_movements(int keycode, t_game *game);
+int				ft_free_exit(t_game *game);
 //ft_check_items
 void			check_items(t_game *game);
 void			get_pos_player(t_game *game);
-int		ft_can_exit(t_game *game);
-
+int				ft_can_exit(t_game *game);
+int				you_win(t_game *game);
+//free_map
+void			free_map(t_game *game);
+//ft_contador
+int				ft_contador(int cont, t_game *game);
 
 #endif

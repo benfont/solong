@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 20:26:57 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:05:39 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,6 @@ int	ft_movements(int keycode, t_game *game)
 	return (0);
 }
 */
-int	ft_free_exit(t_game *game)
-{
-	(void)game;
-	exit(1);
-	return (0);
-}
 
 int	main(int argc, char **argv)
 {
@@ -101,6 +95,7 @@ int	main(int argc, char **argv)
 	check_characters(&game);
 	printf("my ancho is %d\n", game.width);
 	printf("my largo is %d\n", game.height);
+	//ft_can_move(&game);
 	check_items(&game);
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,

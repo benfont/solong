@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 22:10:07 by aitlopez         ###   ########.fr       */
+/*   Created: 2023/03/13 19:13:06 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/03/13 22:12:41 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_errors(int argc, char **argv)
+void	free_map(t_game *game)
 {
-	int		fd;
-	size_t	len;
+	int		cont;
 
-	len = 0;
-	(void) argv;
-	if (argc != 2)
+	cont = 0;
+	if (game->map[cont])
 	{
-		write (2, "Error\nBad arg number\n", 20);
-		exit(-1);
+		printf("A LIMPIAR\n");
+		while (game->map[cont])
+		{
+			free(game->map[cont]);
+			cont++;
+		}
+		free(game->map);
 	}
-	fd = open(argv[0], O_RDONLY);
-	if (fd < 0)
-	{
-		printf("Error\nCan't read\n");
-		exit(-1);
-	}
-	len = ft_strlen(argv[1]);
-	if (!ft_strnstr(&argv[1][len - 4], ".ber", 4))
-	{
-		write (2, "Error\nIncorrect extension\n", 25);
-		exit(-1);	
-	}
-	close(fd);	
-	return (0);
+	if (game->map_raw)
+		free(game->map_raw);
+	if (game->imgs)
+		free(game->imgs);
+	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 }

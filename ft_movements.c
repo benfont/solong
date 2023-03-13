@@ -6,14 +6,14 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 20:59:14 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:54:19 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
 //este archivo mueve el player en el map
-static char	ft_get_direction(int keycode)
+static char	ft_get_direction(int keycode, t_game *game)
 {
 	if (keycode == 13)
 		return ('W');
@@ -24,7 +24,10 @@ static char	ft_get_direction(int keycode)
 	if (keycode == 2)
 		return ('D');
 	if (keycode == 53)
-		return (-1);
+	{
+		free_map(game);
+		exit(-1);
+	}
 	return (0);
 }
 
@@ -66,6 +69,8 @@ int ft_can_move(t_game *game)
 	{
 		if (game->map[game->player_x -1][game->player_y] == 'C')
 			game->collect--;
+		game->contador++;
+		printf("Mi jugador ha reccorido %d\n", game->contador);
 //		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
 	}
@@ -73,6 +78,8 @@ int ft_can_move(t_game *game)
 	{
 		if (game->map[game->player_x +1][game->player_y] == 'C')
 			game->collect--;
+		game->contador++;
+		printf("Mi jugador ha reccorido %d\n", game->contador);
 //		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
 	}
@@ -80,6 +87,8 @@ int ft_can_move(t_game *game)
 	{
 		if (game->map[game->player_x][game->player_y -1] == 'C')
 			game->collect--;
+		game->contador++;
+		printf("Mi jugador ha reccorido %d\n", game->contador);
 //		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
 	}
@@ -87,6 +96,8 @@ int ft_can_move(t_game *game)
 	{
 		if (game->map[game->player_x][game->player_y +1] == 'C')
 			game->collect--;
+		game->contador++;
+		printf("Mi jugador ha reccorido %d\n", game->contador);
 //		printf("Nos quedan estos coleccionables: %d\n", game->collect);
 		return (1);
 	}
@@ -99,19 +110,29 @@ int	ft_can_exit(t_game *game)
 {
 //	printf("Aqui entro\n");
 	if (game->position == 'W' && (game->map[game->player_x -1][game->player_y] == 'E'))
-		exit(-1);
+		you_win(game);
 	if (game->position =='S' && (game->map[game->player_x +1][game->player_y] == 'E'))
-   		exit(-1);
+  		you_win(game);
 	if (game->position == 'A' && (game->map[game->player_x][game->player_y -1] == 'E'))
-		exit(-1);
+		you_win(game);
 	if (game->position == 'D' && (game->map[game->player_x][game->player_y +1] == 'E'))
-		exit(-1);
+		you_win(game);
+	return (0);
+}
+
+int	you_win(t_game *game)
+{
+	{
+		mlx_string_put(game->mlx_ptr, game->win_ptr, 15,
+			15, 66000000, "CONGRATULATIONS");
+		return (1);
+	}
 	return (0);
 }
 
 int	ft_movements(int keycode, t_game *game)
 {
-	game->position = ft_get_direction(keycode);
+	game->position = ft_get_direction(keycode, game);
 	if (keycode == 'W')
 		printf("Me muevo hacia arriba\n");
 	if (keycode == 'S')
@@ -128,11 +149,10 @@ int	ft_movements(int keycode, t_game *game)
 	}
 	return (0);
 }
-/*
+
 int	ft_free_exit(t_game *game)
 {
-	(void)game;
+	free_map(game);
 	exit(1);
 	return (0);
 }
-*/
