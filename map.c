@@ -6,12 +6,15 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 20:21:55 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/06 18:52:13 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/13 22:27:22 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/*
+ * free(line) -> libera el puntero char *line y evita el leak escondido
+ */
 void	ft_read_map(char **argv, t_game *game)
 {
 	int		fd;
@@ -32,6 +35,7 @@ void	ft_read_map(char **argv, t_game *game)
 	game->map_raw = ft_strdup(line);
 	while (line)
 	{
+		free(line);
 		line = get_next_line(fd);
 		if(!line)
 			break;
