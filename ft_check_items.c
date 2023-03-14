@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:47:00 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/11 20:40:47 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:57:49 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	check_items(t_game *game)
 			if (game->map[col][fil] == 'C')
 			{
 				game->collect++;
-				printf("Tenemos estos coleccionables: %d\n", game->collect);
 			}
 			fil++;
 		}
@@ -58,9 +57,6 @@ void	get_pos_player(t_game *game)
 		{
 			if (game->map[col][fil] == 'P')
 			{
-				printf("Esto es game->map[col][fil] %c", game->map[col][fil]);
-			   printf("col es %d\n", col);
-		   		printf("fil es %d\n", fil);	   
 				game->player_x = col;
 				game->player_y = fil;
 			}

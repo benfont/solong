@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 21:54:19 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:51:21 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,15 @@ static void ft_movement_a_d(t_game *game)
 
 int ft_can_move(t_game *game)
 {
+	char	cont_char;
+
 	if (game->position == 'W' && (game->map[game->player_x -1][game->player_y] == '0' || (game->map[game->player_x -1][game->player_y] == 'C')))
 	{
 		if (game->map[game->player_x -1][game->player_y] == 'C')
 			game->collect--;
 		game->contador++;
-		printf("Mi jugador ha reccorido %d\n", game->contador);
-//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
+		cont_char = ft_putnbr(game->contador);
+		write (1, "\n", 1);
 		return (1);
 	}
 	if (game->position == 'S' && (game->map[game->player_x +1][game->player_y] == '0' || (game->map[game->player_x +1][game->player_y] == 'C')))
@@ -79,8 +81,8 @@ int ft_can_move(t_game *game)
 		if (game->map[game->player_x +1][game->player_y] == 'C')
 			game->collect--;
 		game->contador++;
-		printf("Mi jugador ha reccorido %d\n", game->contador);
-//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
+		cont_char = ft_putnbr(game->contador);
+		write (1, "\n", 1);
 		return (1);
 	}
 	if (game->position == 'A' && (game->map[game->player_x][game->player_y -1] == '0' || (game->map[game->player_x][game->player_y -1] == 'C')))
@@ -88,8 +90,8 @@ int ft_can_move(t_game *game)
 		if (game->map[game->player_x][game->player_y -1] == 'C')
 			game->collect--;
 		game->contador++;
-		printf("Mi jugador ha reccorido %d\n", game->contador);
-//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
+		cont_char = ft_putnbr(game->contador);
+		write (1, "\n", 1);
 		return (1);
 	}
 	if (game->position == 'D' && (game->map[game->player_x][game->player_y +1] == '0' || (game->map[game->player_x][game->player_y +1] == 'C')))
@@ -97,8 +99,8 @@ int ft_can_move(t_game *game)
 		if (game->map[game->player_x][game->player_y +1] == 'C')
 			game->collect--;
 		game->contador++;
-		printf("Mi jugador ha reccorido %d\n", game->contador);
-//		printf("Nos quedan estos coleccionables: %d\n", game->collect);
+		cont_char = ft_putnbr(game->contador);
+		write (1, "\n", 1);
 		return (1);
 	}
 	if (game->collect == 0)
@@ -108,7 +110,6 @@ int ft_can_move(t_game *game)
 
 int	ft_can_exit(t_game *game)
 {
-//	printf("Aqui entro\n");
 	if (game->position == 'W' && (game->map[game->player_x -1][game->player_y] == 'E'))
 		you_win(game);
 	if (game->position =='S' && (game->map[game->player_x +1][game->player_y] == 'E'))

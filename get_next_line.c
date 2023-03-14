@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:58:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/02/25 20:24:53 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:01:10 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,3 @@ char	*get_next_line(int fd)
 	fed = ft_xtraspace(fed);
 	return (line);
 }
-/*
-int	main(void)
-{
-	int		fd;
-	char	*str;
-	fd = open("hola.txt", O_RDONLY);
-	str = "aa";
-	str = get_next_line(fd);
-	printf("%s", str);
-	close(fd);
-	return (0);
-}
-*/

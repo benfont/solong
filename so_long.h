@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 21:56:24 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:33:47 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,12 @@ int				you_win(t_game *game);
 void			free_map(t_game *game);
 //ft_contador
 int				ft_contador(int cont, t_game *game);
+//ft_itoa
+int				ft_cifras(long nb);
+char			*mayomen(char *s, int cifras, long m);
+char			*ft_itoa(int n);
+//ft_putchar
+char			ft_putchar(char c);
+char			ft_putnbr(int nb);
 
 #endif

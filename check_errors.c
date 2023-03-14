@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 22:10:07 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:54:57 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	check_errors(int argc, char **argv)
 	fd = open(argv[0], O_RDONLY);
 	if (fd < 0)
 	{
-		printf("Error\nCan't read\n");
 		exit(-1);
 	}
 	len = ft_strlen(argv[1]);

@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:02:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/03 20:22:47 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:56:36 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,11 @@ int	check_rectangle(t_game *game)
 
 	col = 0;
 	fil = 0;
-	printf("Entramos en la funcion checkrectangle\n");
 	while (game->map[col][fil])
 	{
-		printf("Entramos en el while de col < width\n");
-		printf("El col vale: %d, y el fil vale: %d\n", col, fil);
 		while (game->map[fil])
 		{
 			fil++;
-			printf("Entramos en el while del fil\n");
-			printf("El col vale: %d, y el fil vale: %d\n", col, fil);
 		}
 		if (fil != game->width)
 		{

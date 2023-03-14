@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 20:25:44 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 20:38:12 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:54:31 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	check_characters(t_game *game)
 
 	col = 0;
 	fil = 0;
-	printf("Entramos en la funcion check characters\n");
 	while (game->map[col])
 	{
 		while (game->map[col][fil])
@@ -31,7 +30,6 @@ int	check_characters(t_game *game)
 					&& game->map[col][fil] != 'E'
 					&& game->map[col][fil] != 'P')
 			{
-				printf("hey\n");
 				write (2, "Error\nWrong characters\n", 23);
 				exit(-1);
 //				return (-1);
