@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 20:21:55 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/13 22:27:22 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:21:52 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_read_map(char **argv, t_game *game)
 		exit(-1);
 	}
 	line = get_next_line(fd);
-	if(!line)
+	if (!line)
 	{
 		write(2, "Error\nNo map", 13);
 		exit(-1);
@@ -37,7 +37,7 @@ void	ft_read_map(char **argv, t_game *game)
 	{
 		free(line);
 		line = get_next_line(fd);
-		if(!line)
+		if (!line)
 			break;
 		game->map_raw = ft_strjoin(game->map_raw, line);
 	}
@@ -64,7 +64,7 @@ void	ft_height(t_game *game)
 {
 	int		fil;
 	int		col;
-	
+
 	fil = 0;
 	col = 0;
 	while (game->map[col] != NULL)

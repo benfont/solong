@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/14 19:07:30 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:23:18 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int	main(int argc, char **argv)
 {
-
-	t_game  game;
+	t_game	game;
 
 	check_errors(argc, argv);
 	ft_read_map(argv, &game);

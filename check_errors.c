@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/14 19:54:57 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:13:34 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	check_errors(int argc, char **argv)
 		write (2, "Error\nIncorrect extension\n", 25);
 		exit(-1);	
 	}
-	close(fd);	
+	close(fd);
 	return (0);
 }

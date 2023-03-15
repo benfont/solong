@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 20:25:44 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/14 19:54:31 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:11:40 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_characters(t_game *game)
 		while (game->map[col][fil])
 		{
 			fil++;
-			if(game->map[col][fil] != '1' && game->map[col][fil]
+			if (game->map[col][fil] != '1' && game->map[col][fil]
 					&& game->map[col][fil] != '0'
 					&& game->map[col][fil] != 'C'
 					&& game->map[col][fil] != 'E'
@@ -32,7 +32,6 @@ int	check_characters(t_game *game)
 			{
 				write (2, "Error\nWrong characters\n", 23);
 				exit(-1);
-//				return (-1);
 			}
 		}
 		col++;
