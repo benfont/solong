@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 18:16:07 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:39:20 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,9 @@ char			*ft_itoa(int n);
 //ft_putchar
 char			ft_putchar(char c);
 char			ft_putnbr(int nb);
+//exit_game
+int				ft_can_exit(t_game *game);
+int				you_win(t_game *game);
+int				ft_free_exit(t_game *game);
 
 #endif
