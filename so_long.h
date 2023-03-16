@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 20:39:20 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:19:55 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ int				check_items(t_game *game);
 void			check_items_error(t_game *game);
 void			get_pos_player(t_game *game);
 int				ft_can_exit(t_game *game);
-int				you_win(t_game *game);
 //free_map
 void			free_map(t_game *game);
 //ft_contador
@@ -122,7 +121,7 @@ char			ft_putchar(char c);
 char			ft_putnbr(int nb);
 //exit_game
 int				ft_can_exit(t_game *game);
-int				you_win(t_game *game);
+void			you_win(t_game *game);
 int				ft_free_exit(t_game *game);
 
 #endif

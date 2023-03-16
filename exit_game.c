@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:35:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 20:41:06 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:54:35 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@ int	ft_can_exit(t_game *game)
 	return (0);
 }
 
-int	you_win(t_game *game)
+void	you_win(t_game *game)
 {
-	{
-		mlx_string_put(game->mlx_ptr, game->win_ptr, 15,
-			15, 66000000, "CONGRATULATIONS");
-		return (1);
-	}
-	return (0);
+//	long long int	nbr;
+
+//	nbr = 0;
+	mlx_string_put(game->mlx_ptr, game->win_ptr, 15,
+		15, 66000000, "CONGRATULATIONS");
+	game->map[game->player_x][game->player_y - 1] = '1';
+	game->map[game->player_x][game->player_y + 1] = '1';
+	game->map[game->player_x - 1][game->player_y] = '1';
+	game->map[game->player_x + 1][game->player_y] = '1';
 }
 
 int	ft_free_exit(t_game *game)
