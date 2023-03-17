@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/16 17:19:55 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/17 19:03:46 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef struct s_game
 	void	*win_ptr;
 	char	**map;
 	char	*map_raw;
+	char	**cp_map;
+	char	**cp_map2;
 	int		width;
 	int		height;
 	t_img	*imgs;
@@ -52,6 +54,7 @@ typedef struct s_game
 	int		player_x;
 	int		player_y;
 	int		contador;
+	int		collect_cp;
 }	t_game;
 
 //check_errors functions.c
@@ -123,5 +126,9 @@ char			ft_putnbr(int nb);
 int				ft_can_exit(t_game *game);
 void			you_win(t_game *game);
 int				ft_free_exit(t_game *game);
+//ft_check_path
+char			**copy_map(t_game *game);
+int				ft_check_path(t_game *game, int col, int fil);
+int				ft_check_exit(t_game *game, int col, int fil);
 
 #endif

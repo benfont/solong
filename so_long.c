@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/14 20:23:18 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/17 19:03:09 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 	printf("my largo is %d\n", game.height);
 	//ft_can_move(&game);
 	check_items(&game);
+	game.cp_map = copy_map(&game);
+	game.cp_map2 = copy_map(&game);
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,
 			game.height * SIZE, "El plan");
