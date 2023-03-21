@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/15 20:41:44 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/17 19:40:37 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ int	ft_movements(int keycode, t_game *game)
 		printf("Me muevo hacia la izquierda\n");
 	if (keycode == 'D')
 		printf("Me muevo hacia la derecha\n");
-	if (ft_can_move_w_s(game) || ft_can_move_a_d(game)  == 1)
+	if (ft_can_move_w_s(game) || ft_can_move_a_d(game) == 1)
 	{
 		ft_movement_w_s(game);
 		ft_movement_a_d(game);

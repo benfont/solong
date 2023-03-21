@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/17 19:03:46 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:34:27 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_game
 	int		player_y;
 	int		contador;
 	int		collect_cp;
+	int		fuera;
 }	t_game;
 
 //check_errors functions.c
@@ -62,9 +63,6 @@ int				check_errors(int argc, char **argv);
 int				check_rectangular_map(t_game *game);
 int				content_map(t_game *game);
 //ft_split
-//static int		word_counter(char const *s, char c);
-//static void		memfree(char **str, size_t j);
-//static char		**malloc_strings(char const *s, char c, char **words, size_t i);
 char			**ft_split(char const *s, char c);
 //get_next_line functions.c
 char			*true_free(char **ptr);
@@ -87,10 +85,11 @@ char			*ft_strdup(char *s1);
 int				ft_strncmp(char *s1, char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
 //check_barrier
-int				ft_barrier_height(t_game *game);
 int				ft_barrier_width(t_game *game);
+int				ft_barrier_height(t_game *game);
 //check_rectangle
-int				check_rectangle(t_game *game);
+void			check_len_width(t_game *game);
+void			check_len_height(t_game *game);
 //check_characters
 int				check_characters(t_game *game);
 //upload_images

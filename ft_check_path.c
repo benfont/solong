@@ -6,11 +6,11 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:57:28 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/17 18:57:27 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:50:41 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.c"
+#include "so_long.h"
 
 char	**copy_map(t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:35:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/08 18:06:55 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/17 19:34:22 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "so_long.h"
+#include "so_long.h"
 
 //esta es la funcion que necesito para cargar la imagen del mapa
 void	ft_upload_images(t_game *game)

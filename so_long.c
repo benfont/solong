@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/17 19:03:09 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:07:02 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,9 @@ int	main(int argc, char **argv)
 	ft_create_map(&game);
 	ft_width(&game);
 	ft_height(&game);
-//	ft_barrier_height(&game);
-//	ft_barrier_width(&game);
-//	check_rectangle(&game);
 	check_characters(&game);
 	printf("my ancho is %d\n", game.width);
 	printf("my largo is %d\n", game.height);
-	//ft_can_move(&game);
-	check_items(&game);
 	game.cp_map = copy_map(&game);
 	game.cp_map2 = copy_map(&game);
 	game.mlx_ptr = mlx_init();
