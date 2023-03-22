@@ -6,12 +6,12 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 19:58:07 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/21 20:32:10 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:08:27 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+//si el mapa no esta rodeado de '1' devuelve error
 int	ft_barrier_width(t_game *game)
 {
 	int		count1;
