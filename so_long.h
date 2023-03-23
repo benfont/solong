@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/22 17:20:58 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 18:05:37 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,5 +129,9 @@ int				ft_free_exit(t_game *game);
 char			**copy_map(t_game *game);
 int				ft_check_path(t_game *game, int col, int fil);
 int				ft_check_exit(t_game *game, int col, int fil);
+//error_message
+void			error_message(void);
+//ft_save_parameters
+//void			save_parameters(t_game *game);
 
 #endif

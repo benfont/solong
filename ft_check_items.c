@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:47:00 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/21 17:07:30 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 15:58:28 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	check_items(t_game *game)
 	game->player = 0;
 	while (game->map[col])
 	{
-		printf("entramos en check_items\n");
 		fil = 0;
 		while (game->map[col][fil])
 		{
@@ -36,7 +35,6 @@ int	check_items(t_game *game)
 		}
 		col++;
 	}
-	printf("before items error\n");
 	check_items_error(game);
 	return (0);
 }
@@ -47,22 +45,16 @@ int	check_items(t_game *game)
  * */
 void	check_items_error(t_game *game)
 {
-	printf("1\n");
 	if (game->player != 1 || (game->exit != 1 || game->collect < 1))
 	{
-		printf("player es: %i\n", game->player);
-		printf("exit es: %i\n", game->exit);
-		printf("collect es: %i\n", game->collect);
 		write (2, "Error\nError\n", 12);
 		exit(-1);
 	}
-	printf("before get_pos_player\n");
 	get_pos_player(game);
 }
 
 void	get_pos_player(t_game *game)
 {
-	printf("2\n");
 	int		col;
 	int		fil;
 
@@ -82,5 +74,4 @@ void	get_pos_player(t_game *game)
 		col++;
 		fil = 0;
 	}
-	printf("3\n");
 }

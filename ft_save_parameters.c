@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   ft_save_parameters.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 19:13:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 15:55:41 by aitlopez         ###   ########.fr       */
+/*   Created: 2023/03/22 18:32:11 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/03/23 15:10:47 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_map(t_game *game)
+void	ft_save_parameters(t_game *game)
 {
-	int		cont;
+	t_game	game;
 
-	cont = 0;
-	if (game->map[cont])
-	{
-		write (2, "A limpiar\n", 10);
-		while (game->map[cont])
-		{
-			free(game->map[cont]);
-			cont++;
-		}
-		free(game->map);
-	}
-	if (game->map_raw)
-		free(game->map_raw);
-	if (game->imgs)
-		free(game->imgs);
-	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	ft_create_map(&game);
 }
