@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:35:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 19:03:26 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:39:58 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	you_win(t_game *game)
 	game->map[game->player_x + 1][game->player_y] = '1';
 }
 
-int	ft_free_exit(t_game *game)
+int	free_exit(t_game *game)
 {
 	free_map(game);
 	exit(1);

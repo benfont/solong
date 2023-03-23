@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 19:35:25 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:21:37 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ char			*ft_xtraspace(char *fed);
 char			*ft_read(int fd, char *fed);
 
 //map
-void			ft_read_map(char **argv, t_game *game);
+void			read_map(char **argv, t_game *game);
 char			*get_next_line(int fd);
-void			ft_create_map(t_game *game);
-void			ft_width(t_game *game);
-void			ft_height(t_game *game);
+void			create_map(t_game *game);
+void			width(t_game *game);
+void			height(t_game *game);
 //utils.c
 size_t			ft_strlen(const char *str);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
@@ -93,7 +93,7 @@ void			check_len_height(t_game *game);
 //check_characters
 int				check_characters(t_game *game);
 //upload_images
-void			ft_upload_images(t_game *game);
+void			upload_images(t_game *game);
 //print_map
 void			print_map(t_game *game);
 //ft_print_characters
@@ -104,7 +104,7 @@ void			print_exit(t_game *game, int col, int fil);
 void			print_heroe_w(t_game *game, int col, int fil);
 //ft_movements
 int				movements(int keycode, t_game *game);
-int				ft_free_exit(t_game *game);
+int				free_exit(t_game *game);
 //check_items
 int				check_items(t_game *game);
 void			check_items_error(t_game *game);

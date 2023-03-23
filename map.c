@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 20:21:55 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/14 20:21:52 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:44:41 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
  * free(line) -> libera el puntero char *line y evita el leak escondido
  */
-void	ft_read_map(char **argv, t_game *game)
+void	read_map(char **argv, t_game *game)
 {
 	int		fd;
 	char	*line;
@@ -45,12 +45,12 @@ void	ft_read_map(char **argv, t_game *game)
 	close (fd);
 }
 
-void	ft_create_map(t_game *game)
+void	create_map(t_game *game)
 {
 	game->map = ft_split(game->map_raw, '\n');
 }
 
-void	ft_width(t_game *game)
+void	width(t_game *game)
 {
 	int		fil;
 
@@ -60,7 +60,7 @@ void	ft_width(t_game *game)
 	game->width = fil;
 }
 
-void	ft_height(t_game *game)
+void	height(t_game *game)
 {
 	int		fil;
 	int		col;

@@ -6,14 +6,14 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:35:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/17 19:34:22 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:24:27 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 //esta es la funcion que necesito para cargar la imagen del mapa
-void	ft_upload_images(t_game *game)
+void	upload_images(t_game *game)
 {
 	int	height;
 	int	width;

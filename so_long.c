@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 19:22:50 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:23:26 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	check_errors(argc, argv);
-	ft_read_map(argv, &game);
-	ft_create_map(&game);
-	ft_width(&game);
-	ft_height(&game);
+	read_map(argv, &game);
+	create_map(&game);
+	width(&game);
+	height(&game);
 	check_characters(&game);
 	printf("my ancho is %d\n", game.width);
 	printf("my largo is %d\n", game.height);
@@ -36,9 +36,9 @@ int	main(int argc, char **argv)
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,
 			game.height * SIZE, "El plan");
-	ft_upload_images(&game);
+	upload_images(&game);
 	print_map(&game);
-	mlx_hook(game.win_ptr, 17, 0, ft_free_exit, &game);
+	mlx_hook(game.win_ptr, 17, 0, free_exit, &game);
 	mlx_hook(game.win_ptr, 2, 0, movements, &game);
 	mlx_loop(game.mlx_ptr);
 	return (0);
