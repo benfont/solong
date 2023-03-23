@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 18:05:37 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:35:25 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ char			*ft_strdup(char *s1);
 int				ft_strncmp(char *s1, char *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
 //check_barrier
-int				ft_barrier_width(t_game *game);
-int				ft_barrier_height(t_game *game);
+int				barrier_width(t_game *game);
+int				barrier_height(t_game *game);
 //check_rectangle
 void			check_len_width(t_game *game);
 void			check_len_height(t_game *game);
@@ -97,19 +97,19 @@ void			ft_upload_images(t_game *game);
 //print_map
 void			print_map(t_game *game);
 //ft_print_characters
-void			ft_print_barrier(t_game *game, int col, int fil);
-void			ft_print_espacio(t_game *game, int col, int fil);
-void			ft_print_coleccionable(t_game *game, int col, int fil);
-void			ft_print_exit(t_game *game, int col, int fil);
-void			ft_print_heroe_w(t_game *game, int col, int fil);
+void			print_barrier(t_game *game, int col, int fil);
+void			print_espacio(t_game *game, int col, int fil);
+void			print_coleccionable(t_game *game, int col, int fil);
+void			print_exit(t_game *game, int col, int fil);
+void			print_heroe_w(t_game *game, int col, int fil);
 //ft_movements
-int				ft_movements(int keycode, t_game *game);
+int				movements(int keycode, t_game *game);
 int				ft_free_exit(t_game *game);
-//ft_check_items
+//check_items
 int				check_items(t_game *game);
 void			check_items_error(t_game *game);
 void			get_pos_player(t_game *game);
-int				ft_can_exit(t_game *game);
+int				can_exit(t_game *game);
 //free_map
 void			free_map(t_game *game);
 //ft_contador
@@ -122,13 +122,13 @@ char			*ft_itoa(int n);
 char			ft_putchar(char c);
 char			ft_putnbr(int nb);
 //exit_game
-int				ft_can_exit(t_game *game);
+int				can_exit(t_game *game);
 void			you_win(t_game *game);
 int				ft_free_exit(t_game *game);
 //ft_check_path
 char			**copy_map(t_game *game);
-int				ft_check_path(t_game *game, int col, int fil);
-int				ft_check_exit(t_game *game, int col, int fil);
+int				check_path(t_game *game, int col, int fil);
+int				check_exit(t_game *game, int col, int fil);
 //error_message
 void			error_message(void);
 //ft_save_parameters

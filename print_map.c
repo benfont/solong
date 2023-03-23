@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:59:41 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/10 18:20:11 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:35:09 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	print_map(t_game *game)
 		while (game->map[col][fil])
 		{
 			if (game->map[col][fil] == '1')
-				ft_print_barrier(game, col, fil);
+				print_barrier(game, col, fil);
 			else if (game->map[col][fil] == '0')
-				ft_print_espacio(game, col, fil);
+				print_espacio(game, col, fil);
 			else if (game->map[col][fil] == 'C')
-				ft_print_coleccionable(game, col, fil);
+				print_coleccionable(game, col, fil);
 			else if (game->map[col][fil] == 'E')
-				ft_print_exit(game, col, fil);
+				print_exit(game, col, fil);
 			else if (game->map[col][fil] == 'P')
-				ft_print_heroe_w(game, col, fil);
+				print_heroe_w(game, col, fil);
 			fil++;
 		}
 		col++;

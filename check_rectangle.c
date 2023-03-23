@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:02:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 15:53:38 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:02:06 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void check_len_height(t_game *game)
 			fil++;
 		if (fil != game->width)
 		{
-			write (2, "Error\nNo es un rectangulooo", 26);
+			write (2, "Error\nNo es un rectangulo", 26);
 			exit(-1);
 		}
 		else if (fil == game->width && col < game->height)

@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 16:26:18 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/23 19:22:50 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 	printf("my ancho is %d\n", game.width);
 	printf("my largo is %d\n", game.height);
 	check_items(&game);
-	ft_barrier_width(&game);
-	ft_barrier_height(&game);
+	barrier_width(&game);
+	barrier_height(&game);
 	printf("my playes is in %d, %d\n", game.player_x, game.player_y);
 	check_len_width(&game);
 	check_len_height(&game);
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	ft_upload_images(&game);
 	print_map(&game);
 	mlx_hook(game.win_ptr, 17, 0, ft_free_exit, &game);
-	mlx_hook(game.win_ptr, 2, 0, ft_movements, &game);
+	mlx_hook(game.win_ptr, 2, 0, movements, &game);
 	mlx_loop(game.mlx_ptr);
 	return (0);
 }
