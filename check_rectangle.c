@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:02:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 19:02:06 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:36:04 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	check_len_width(t_game *game)
 	}
 }
 
-void check_len_height(t_game *game)
+void	check_len_height(t_game *game)
 {
 	int		col;
 	int		fil;

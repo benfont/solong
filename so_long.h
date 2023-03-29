@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 20:21:37 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:33:51 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,9 @@ void			print_heroe_w(t_game *game, int col, int fil);
 //ft_movements
 int				movements(int keycode, t_game *game);
 int				free_exit(t_game *game);
+//can_move
+int				can_move_w_s(t_game *game);
+int				can_move_a_d(t_game *game);
 //check_items
 int				check_items(t_game *game);
 void			check_items_error(t_game *game);
@@ -131,6 +134,8 @@ int				check_path(t_game *game, int col, int fil);
 int				check_exit(t_game *game, int col, int fil);
 //error_message
 void			error_message(void);
+void			no_read_file(void);
+void			no_map(void);
 //ft_save_parameters
 //void			save_parameters(t_game *game);
 
