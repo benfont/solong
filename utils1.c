@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:22:02 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/29 18:44:10 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:46:36 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			while (needle[j] && (i + j) < len)
 			{
 				if (haystack[i + j] != needle[j])
-					break;
+					break ;
 				j++;
 			}
 			if (needle[j] == 0)

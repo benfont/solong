@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/29 18:12:51 by aitlopez         ###   ########.fr       */
+	/*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
+/*   Updated: 2023/03/30 19:43:25 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,9 @@ int	main(int argc, char **argv)
 	width(&game);
 	height(&game);
 	check_characters(&game);
-	printf("my ancho is %d\n", game.width);
-	printf("my largo is %d\n", game.height);
 	check_items(&game);
 	barrier_width(&game);
 	barrier_height(&game);
-	printf("my playes is in %d, %d\n", game.player_x, game.player_y);
 	check_len_width(&game);
 	check_len_height(&game);
 	game.cp_map = copy_map(&game);
@@ -43,3 +40,8 @@ int	main(int argc, char **argv)
 	mlx_loop(game.mlx_ptr);
 	return (0);
 }
+/*
+	printf("my ancho is %d\n", game.width);
+	printf("my largo is %d\n", game.height);
+	printf("my playes is in %d, %d\n", game.player_x, game.player_y);
+*/

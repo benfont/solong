@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:57:28 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 19:13:30 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:38:01 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ int	check_exit(t_game *game, int col, int fil)
 	check_exit(game, col, fil - 1);
 	check_exit(game, col + 1, fil);
 	check_exit(game, col - 1, fil);
+	game->contador = 0;
 	return (-1);
 }

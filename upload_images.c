@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:35:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 20:24:27 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:26:26 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	upload_images(t_game *game)
 
 	game->imgs = malloc(sizeof(t_img) * (5));
 	game->imgs[0].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
-			"images/pared.xpm", &width, &height);
+			"images/wall.xpm", &width, &height);
 	game->imgs[0].data = (int *)mlx_get_data_addr(game->imgs[0].img_ptr,
 			&game->imgs[0].bpp, &game->imgs[0].size_l, &game->imgs[0].endian);
 	game->imgs[1].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
@@ -28,15 +28,15 @@ void	upload_images(t_game *game)
 	game->imgs[1].data = (int *)mlx_get_data_addr(game->imgs[1].img_ptr,
 			&game->imgs[1].bpp, &game->imgs[1].size_l, &game->imgs[1].endian);
 	game->imgs[2].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
-			"images/coleccionable.xpm", &width, &height);
+			"images/bomb.xpm", &width, &height);
 	game->imgs[2].data = (int *)mlx_get_data_addr(game->imgs[2].img_ptr,
 			&game->imgs[2].bpp, &game->imgs[2].size_l, &game->imgs[2].endian);
 	game->imgs[3].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
-			"images/heroe_w.xpm", &width, &height);
+			"images/skull.xpm", &width, &height);
 	game->imgs[3].data = (int *)mlx_get_data_addr(game->imgs[0].img_ptr,
 			&game->imgs[3].bpp, &game->imgs[3].size_l, &game->imgs[3].endian);
 	game->imgs[4].img_ptr = mlx_xpm_file_to_image(game->mlx_ptr,
-			"images/exit.xpm", &width, &height);
+			"images/grave.xpm", &width, &height);
 	game->imgs[4].data = (int *)mlx_get_data_addr(game->imgs[4].img_ptr,
 			&game->imgs[4].bpp, &game->imgs[4].size_l, &game->imgs[4].endian);
 }
