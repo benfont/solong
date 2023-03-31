@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 	/*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/30 19:43:25 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/31 20:09:49 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,26 @@ int	main(int argc, char **argv)
 	create_map(&game);
 	width(&game);
 	height(&game);
-	check_characters(&game);
-	check_items(&game);
-	barrier_width(&game);
+	check_call(&game);
+//	check_characters(&game);
+//	check_items(&game);
 	barrier_height(&game);
-	check_len_width(&game);
-	check_len_height(&game);
+//	check_len_width(&game);
+//	check_len_height(&game);
 	game.cp_map = copy_map(&game);
 	game.cp_map2 = copy_map(&game);
+	check_path(&game, game.player_x, game.player_y);
+	if (game.collect_cp != 0)
+	{
+		write (2, "Error\nNot path between the player and the exit\n", 47);
+		exit (-1);
+	}
+	check_exit(&game, game.player_x, game.player_y);
+	if (game.exit != 0)
+	{
+		write (2, "Error\nThere's not a path between the p and the exit\n", 57);
+		exit (-1);
+	}
 	game.mlx_ptr = mlx_init();
 	game.win_ptr = mlx_new_window(game.mlx_ptr, game.width * SIZE,
 			game.height * SIZE, "El plan");

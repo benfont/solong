@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/30 16:50:20 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/31 20:12:57 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_game
 
 //check_errors functions.c
 int		check_errors(int argc, char **argv);
+void	check_call(t_game *game);
 int		check_rectangular_map(t_game *game);
 int		content_map(t_game *game);
 //ft_split
@@ -106,7 +107,7 @@ int		movements(int keycode, t_game *game);
 int		free_exit(t_game *game);
 //can_move
 int		can_move_w_s(t_game *game);
-int		can_move_a_d(t_game *game);
+int		can_move_a_d(t_game *eame);
 //check_items
 int		check_items(t_game *game);
 void	check_items_error(t_game *game);
@@ -129,8 +130,8 @@ void	you_win(t_game *game);
 int		ft_free_exit(t_game *game);
 //ft_check_path
 char	**copy_map(t_game *game);
-int		check_path(t_game *game, int col, int fil);
-int		check_exit(t_game *game, int col, int fil);
+void	check_path(t_game *game, int col, int fil);
+void	check_exit(t_game *game, int col, int fil);
 //error_message
 void	error_message(void);
 void	no_read_file(void);
