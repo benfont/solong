@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:57:28 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/31 19:53:25 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:54:36 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,7 @@ void	check_path(t_game *game, int col, int fil)
 {
 	if ((game->cp_map[col][fil] == 'V') || (game->cp_map[col][fil] == '1'
 			|| game->cp_map[col][fil] == 'E'))
-	{
 		return ;
-		// write(1, "Error\nNo hay camino posible hey\n", 32);
-		// exit(-1);
-	}
 	if (game->cp_map[col][fil] == 'C')
 	{
 		game->collect_cp--;
@@ -55,11 +51,7 @@ void	check_path(t_game *game, int col, int fil)
 void	check_exit(t_game *game, int col, int fil)
 {
 	if ((game->cp_map2[col][fil] == 'V') || (game->cp_map2[col][fil] == '1'))
-	{
 		return ;
-		//write(1, "Error\nNo hay camino posible\n", 28);
-		//exit(-1);
-	}
 	if (game->cp_map2[col][fil] == 'E')
 	{
 		game->cp_map2[col][fil] = 'V';
@@ -71,5 +63,4 @@ void	check_exit(t_game *game, int col, int fil)
 	check_exit(game, col + 1, fil);
 	check_exit(game, col - 1, fil);
 	game->contador = 0;
-//	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 	/*   Created: 2023/02/15 19:39:20 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/31 20:09:49 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:56:45 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int argc, char **argv)
 	width(&game);
 	height(&game);
 	check_call(&game);
-//	check_characters(&game);
 //	check_items(&game);
 	barrier_height(&game);
 //	check_len_width(&game);

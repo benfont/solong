@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:47:00 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/31 19:49:08 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/03/31 20:16:35 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	check_items_error(t_game *game)
 	printf("PLAYER IS: %d\nEXIT IS %d\nCOLLECT IS %d\n", game->player, game->exit, game->collect);
 	if (game->player != 1 || (game->exit != 1 || game->collect < 1))
 	{
-		write (2, "Error\nError\n", 12);
+		write (2, "Error\nCheck items error\n", 24);
 		exit(-1);
 	}
 	game->collect_cp = game->collect;
