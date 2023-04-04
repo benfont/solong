@@ -6,12 +6,12 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/31 20:13:13 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:53:02 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+//verifica los argumentos recibidos
 int	check_errors(int argc, char **argv)
 {
 	int		fd;

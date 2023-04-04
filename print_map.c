@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 19:59:41 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/31 18:55:10 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:42:42 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+/**
+ * @brief 
+ * imprime y muestra el estado del mapa
+ * @param game 
+ */
 void	print_map(t_game *game)
 {
 	int		col;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:06:03 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/22 13:19:35 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:56:12 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,13 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (s3);
 }
-
+/**
+ * @brief 
+ * 
+ * @param s 
+ * @param c 
+ * @return char* 
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	int	cont;
@@ -100,7 +106,12 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)(s + cont));
 	return (NULL);
 }
-
+/**
+ * @brief 
+ * 
+ * @param s1 
+ * @return char* 
+ */
 char	*ft_strdup(char *s1)
 {
 	char	*str_new;

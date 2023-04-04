@@ -6,12 +6,14 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:02:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/29 17:36:04 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:05:39 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+/*
+ * comprueba que cada fila del mapa tenga la misma longitud
+ */
 void	check_len_width(t_game *game)
 {
 	int		col;
@@ -31,7 +33,9 @@ void	check_len_width(t_game *game)
 		col++;
 	}
 }
-
+/*
+ * si alguna fila tiene una long diferente, error y exit
+ */
 void	check_len_height(t_game *game)
 {
 	int		col;

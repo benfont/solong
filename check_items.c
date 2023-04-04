@@ -6,12 +6,14 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:47:00 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/31 20:16:35 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:59:01 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+/*
+ *verifica la cantidad de 'P','E' y 'C'
+ */
 int	check_items(t_game *game)
 {
 	int		col;
@@ -41,10 +43,9 @@ int	check_items(t_game *game)
 	return (0);
 }
 
-/**
- *recoge los datos de check_items
- *
- * */
+/*
+ * verifica el numero correccito de 'P', 'C' y 'E'
+*/
 void	check_items_error(t_game *game)
 {
 	printf("PLAYER IS: %d\nEXIT IS %d\nCOLLECT IS %d\n", game->player, game->exit, game->collect);
@@ -56,7 +57,9 @@ void	check_items_error(t_game *game)
 	game->collect_cp = game->collect;
 	get_pos_player(game);
 }
-
+/*
+ * obtener la posicion del jugador en el mapa
+ */
 void	get_pos_player(t_game *game)
 {
 	int		col;

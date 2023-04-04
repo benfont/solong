@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/29 17:51:23 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:42:38 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-//este archivo mueve el player en el map
-
+/**
+ * @brief Get the direction object
+ * devuelve la direccion en la que se movera el jugador
+ * @param keycode 
+ * @param game 
+ * @return char 
+ */
 static char	get_direction(int keycode, t_game *game)
 {
 	if (keycode == 13)
@@ -30,7 +35,11 @@ static char	get_direction(int keycode, t_game *game)
 	}
 	return (0);
 }
-
+/**
+ * @brief 
+ * devuelve la direccion en la que se movera 'P'
+ * @param game 
+ */
 static void	movement_w_s(t_game *game)
 {
 	if (game->position == 'W')
@@ -46,7 +55,11 @@ static void	movement_w_s(t_game *game)
 		game->map[game->player_x][game->player_y] = 'P';
 	}
 }
-
+/**
+ * @brief 
+ * devuelve la direccion en la se movera 'P'
+ * @param game 
+ */
 static void	movement_a_d(t_game *game)
 {
 	if (game->position == 'A')
@@ -62,7 +75,16 @@ static void	movement_a_d(t_game *game)
 		game->map[game->player_x][game->player_y] = 'P';
 	}
 }
-
+/**
+ * @brief 
+ * obtiene direccion del movimiento
+ * verifica si 'P' puede moverse
+ * realiza el movimiento
+ * imprime el mapa actualizado
+ * @param keycode 
+ * @param game 
+ * @return int 
+ */
 int	movements(int keycode, t_game *game)
 {
 	game->position = get_direction(keycode, game);

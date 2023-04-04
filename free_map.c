@@ -6,10 +6,12 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:13:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/03/23 15:55:41 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:11:48 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+ * libera memoria asignada dinamicamente en las struct del juego
+ */
 #include "so_long.h"
 
 void	free_map(t_game *game)

@@ -6,12 +6,14 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:57:28 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 16:54:36 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:03:06 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
+/*
+ * crear copia del mapa
+ */
 char	**copy_map(t_game *game)
 {
 	int		count;
@@ -30,7 +32,9 @@ char	**copy_map(t_game *game)
 	game->exit = 1;
 	return (copymap);
 }
-
+/*
+ * busca el camino del jugador en el mapa
+ */
 void	check_path(t_game *game, int col, int fil)
 {
 	if ((game->cp_map[col][fil] == 'V') || (game->cp_map[col][fil] == '1'
@@ -47,7 +51,9 @@ void	check_path(t_game *game, int col, int fil)
 	check_path(game, col + 1, fil);
 	check_path(game, col - 1, fil);
 }
-
+/*
+ * busca la casilla de salida en el mapa
+ */
 void	check_exit(t_game *game, int col, int fil)
 {
 	if ((game->cp_map2[col][fil] == 'V') || (game->cp_map2[col][fil] == '1'))
