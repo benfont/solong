@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:11:30 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 16:57:51 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:41:20 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ typedef struct s_game
 
 //check_errors functions.c
 int		check_errors(int argc, char **argv);
-void	check_call(t_game *game);
 int		check_rectangular_map(t_game *game);
 int		content_map(t_game *game);
 //ft_split

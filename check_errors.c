@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:11:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 17:53:02 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:40:59 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,4 @@ int	check_errors(int argc, char **argv)
 	}
 	close(fd);
 	return (0);
-}
-
-void	check_call(t_game *game)
-{
-	check_characters(game);
-	check_items(game);
-	check_len_width(game);
-	check_len_height(game);
 }

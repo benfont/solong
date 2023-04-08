@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:57:28 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:03:06 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:11:08 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	**copy_map(t_game *game)
 /*
  * busca el camino del jugador en el mapa
  */
+
 void	check_path(t_game *game, int col, int fil)
 {
 	if ((game->cp_map[col][fil] == 'V') || (game->cp_map[col][fil] == '1'
@@ -54,6 +55,7 @@ void	check_path(t_game *game, int col, int fil)
 /*
  * busca la casilla de salida en el mapa
  */
+
 void	check_exit(t_game *game, int col, int fil)
 {
 	if ((game->cp_map2[col][fil] == 'V') || (game->cp_map2[col][fil] == '1'))

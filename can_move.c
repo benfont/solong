@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:41:36 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:42:35 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:08:27 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	can_move_w_s(t_game *game)
  * @param game 
  * @return int 
  */
+
 int	can_move_a_d(t_game *game)
 {
 	if (game->position == 'A' && (game->map[game->player_x][game->player_y -1]

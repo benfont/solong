@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:22:02 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:54:56 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:14:31 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_strncmp(char *s1, char *s2, size_t n)
  * @param len 
  * @return char* 
  */
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

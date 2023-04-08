@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:35:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:08:04 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:11:46 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	you_win(t_game *game)
 /*
  * libera memoria asignada para el mapa y sale del programa
  */
+
 int	free_exit(t_game *game)
 {
 	free_map(game);

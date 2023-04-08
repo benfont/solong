@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:02:09 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:05:39 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:11:21 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	check_len_width(t_game *game)
 /*
  * si alguna fila tiene una long diferente, error y exit
  */
+
 void	check_len_height(t_game *game)
 {
 	int		col;

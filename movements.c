@@ -6,11 +6,12 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 20:26:34 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:42:38 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:16:10 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
 /**
  * @brief Get the direction object
  * devuelve la direccion en la que se movera el jugador
@@ -35,6 +36,7 @@ static char	get_direction(int keycode, t_game *game)
 	}
 	return (0);
 }
+
 /**
  * @brief 
  * devuelve la direccion en la que se movera 'P'
@@ -55,6 +57,7 @@ static void	movement_w_s(t_game *game)
 		game->map[game->player_x][game->player_y] = 'P';
 	}
 }
+
 /**
  * @brief 
  * devuelve la direccion en la se movera 'P'
@@ -75,6 +78,7 @@ static void	movement_a_d(t_game *game)
 		game->map[game->player_x][game->player_y] = 'P';
 	}
 }
+
 /**
  * @brief 
  * obtiene direccion del movimiento

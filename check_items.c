@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:47:00 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 17:59:01 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:15:44 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	check_items(t_game *game)
 */
 void	check_items_error(t_game *game)
 {
-	printf("PLAYER IS: %d\nEXIT IS %d\nCOLLECT IS %d\n", game->player, game->exit, game->collect);
 	if (game->player != 1 || (game->exit != 1 || game->collect < 1))
 	{
 		write (2, "Error\nCheck items error\n", 24);
@@ -60,6 +59,7 @@ void	check_items_error(t_game *game)
 /*
  * obtener la posicion del jugador en el mapa
  */
+
 void	get_pos_player(t_game *game)
 {
 	int		col;

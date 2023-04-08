@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 20:21:55 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:42:32 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:12:44 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
  * @param argv 
  * @param game 
  */
+
 void	read_map(char **argv, t_game *game)
 {
 	int		fd;
@@ -49,6 +50,7 @@ void	read_map(char **argv, t_game *game)
  * y lo almacena en game
  * @param game 
  */
+
 void	create_map(t_game *game)
 {
 	game->map = ft_split(game->map_raw, '\n');
@@ -58,6 +60,7 @@ void	create_map(t_game *game)
  * calcula anchura del mapa
  * @param game 
  */
+
 void	width(t_game *game)
 {
 	int		fil;
@@ -72,6 +75,7 @@ void	width(t_game *game)
  * calcula altura del mapa
  * @param game 
  */
+
 void	height(t_game *game)
 {
 	int		fil;
