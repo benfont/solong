@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:35:05 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/04 17:11:46 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:17:14 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	can_exit(t_game *game)
 
 void	you_win(t_game *game)
 {
-	printf("adios\n");
 	mlx_string_put(game->mlx_ptr, game->win_ptr, 15,
 		15, 66000000, "CONGRATULATIONS");
 	game->map[game->player_x][game->player_y - 1] = '1';

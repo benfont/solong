@@ -6,7 +6,7 @@
 /*   By: aitlopez <aitlopez@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:13:06 by aitlopez          #+#    #+#             */
-/*   Updated: 2023/04/03 18:11:48 by aitlopez         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:21:01 by aitlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -21,7 +21,6 @@ void	free_map(t_game *game)
 	cont = 0;
 	if (game->map[cont])
 	{
-		write (2, "A limpiar\n", 10);
 		while (game->map[cont])
 		{
 			free(game->map[cont]);
